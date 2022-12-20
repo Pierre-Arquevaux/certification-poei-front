@@ -1,5 +1,8 @@
-
-
+.navbar{
+  background-color: #f8d4cd;
+  display: flex;
+  justify-content: space-between;
+}
 
 main{
   position: absolute;
@@ -8,12 +11,9 @@ main{
   z-index: 1;
 }
 
-.side-nav-content{
+.side-nav-content {
   color: white;
   font-size: 1.5rem;
-}
-
-div {
   padding-top: 2rem;
   position: fixed;
   top : 3.5rem;
@@ -21,9 +21,10 @@ div {
   width: 250px;
   height: calc(100vh - 4rem);
   box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-  background-color: rgba(34,34,34,1);
-
+  background-color: #93b6d9;
 }
+
+
 
 i{
   margin-right: 1rem;
@@ -47,9 +48,24 @@ i{
 }
 
 .display-area{
-  background-color: wheat;
+  background-color: #fef8ea;
   position : absolute;
   left: 250px;
-  top : -16px;
+  top : -7px;
   width : calc(100% - 250px);
+}
+
+@media screen and (max-width: 950px) {
+  .side-nav-content{
+    display: none;
+  }
+
+  .display-area{
+    left: 0;
+    width : calc(100%);
+  }
+
+  form{
+    display: none !important;
+  }
 }
