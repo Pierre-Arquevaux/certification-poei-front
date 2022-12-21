@@ -5,6 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home.component';
+import { ChannelsModule } from '../channels/channels.module';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { HomeComponent } from './home.component';
   ],
   imports: [
     CommonModule,
+    ChannelsModule,
     HttpClientModule,
     ReactiveFormsModule,
     HomeRoutingModule

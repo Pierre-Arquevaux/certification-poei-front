@@ -1,27 +1,25 @@
-<h2>{{pageTitle}}</h2>
+<a routerLink="/channels/add">Créé un channel</a>
+
+<div class="button text-center">
+  <button class="btn btn-lg btn-primary"><a routerLink="/channels/add">Nouveau channel</a></button>
+</div>
+
+<div class="row">
+  <div *ngFor="let channel of channels" class="col-lg-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{channel.name}}</h5>
+        <p class="card-text">Un magnifique channel  </p>
+        <a href="#" class="btn btn-warning">Voir les membres du channel</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="button text-center">
+  <button type="submit" class="btn btn-accueil">
+    <a routerLink="/">Retour à l'accueil</a>
+  </button>
+</div>
 
 
-
-<a routerLink="/channels/add">Create New channel</a>
-
-
-
-<!-- Afficher un message si aucun channel dans la liste -->
-
-<ul *ngIf="channels.length; else noChannelMessage">
-
-  <li *ngFor="let channel of channels; let i= index">
-
-    <a [routerLink]="['/channels', channel.id]">{{channel.name}}</a>
-
-   </li>
-
-</ul>
-
-
-
-<ng-template #noChannelMessage>
-
-  <div>Aucun channel en BDD</div>
-
-</ng-template>
