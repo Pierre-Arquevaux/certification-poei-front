@@ -1,0 +1,27 @@
+<h2>{{pageTitle}}</h2>
+
+
+
+<a routerLink="/channels/add">Create New channel</a>
+
+
+
+<!-- Afficher un message si aucun channel dans la liste -->
+
+<ul *ngIf="channels.length; else noChannelMessage">
+
+  <li *ngFor="let channel of channels; let i= index">
+
+    <a [routerLink]="['/channels', channel.id]">{{channel.name}}</a>
+
+   </li>
+
+</ul>
+
+
+
+<ng-template #noChannelMessage>
+
+  <div>Aucun channel en BDD</div>
+
+</ng-template>
