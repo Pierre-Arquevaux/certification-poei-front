@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ShowComponent } from './components/show/show.component';
 
 
+
 @NgModule({
   declarations: [
     ListComponent,
