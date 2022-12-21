@@ -1,1 +1,52 @@
-<p>Le canal general</p>
+<!-- barre fixe -->
+<nav class="navbar navbar-expand  px-2">
+
+  <a routerLink="/">Slacke</a>
+
+  <form class="d-flex me-5">
+    <input type="search" placeholder="Votre recherche" class="form-control me-2">
+    <button class="btn btn-outline-light" type="submit">Recherche</button>
+  </form>
+
+  <button type="button" class="btn btn-light"><a routerLink="/users/add">Nouvel Utilisateur</a></button>
+  <button type="button" class="btn btn-light"><a routerLink="/users">Membres du Slacke</a></button>
+</nav>
+
+<!-- SideBar -->
+<main class="main">
+  <div class="side-nav-content">
+    <ul class="nav-list">
+      <p>Channels</p>
+      <button type="button" class="btn btn-light"><a routerLink="/channel/add">New Channel</a></button>
+      <button type="button" class="btn btn-light"><a routerLink="/channel/add">Voir les channels</a></button>
+      <li *ngFor="let general of generals" class="nav-list-item">
+        <i class="fas fa-hashtag"></i>
+        <span>
+          <a >{{general.name}}</a>
+        </span>
+      </li>
+      <li class="nav-list-item">
+        <i class="fas fa-hashtag"></i>
+        <span>
+          <a >Test</a>
+        </span>
+      </li>
+      <li class="nav-list-item">
+        <i class="fas fa-hashtag"></i>
+        <span>
+          <a >Test</a>
+        </span>
+      </li>
+    </ul>
+
+
+  </div>
+
+  <!-- Main Area -->
+  <div class="display-area p-3">
+    <p class="fs-1 fw-bold">Display Area</p>
+  </div>
+</main>
+
+
+
