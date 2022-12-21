@@ -53,6 +53,22 @@ export class MessageService {
   //     .subscribe(response => console.log(response));
   // }
 
+  public deleteMessage(url: string, id: number|undefined): void
+  {
+    url = `${url}/${id}`;
 
+    // const headers = new HttpHeaders({
+    //   'Content-Type': 'application/json',
+    // });
+
+    // const options = {
+    //   headers
+    // };
+
+    // console.log(url, channel);
+    // this.httpClient.delete(url, options)
+    this.httpClient.delete(url)
+      .subscribe(response => console.log(response));
+  }
 
 }

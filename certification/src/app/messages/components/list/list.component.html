@@ -1,4 +1,5 @@
-<a routerLink="/messages/add">Créé un Message</a>
+<div class="container">
+  <a routerLink="/messages/add">Créé un Message</a>
 
 <div class="button text-center">
   <button class="btn btn-lg btn-primary"><a routerLink="/messages/add">Nouveau message</a></button>
@@ -11,7 +12,8 @@
         <h5 class="card-title">{{message.user.username}}</h5>
         <p class="card-text">{{message.content}}</p>
         <p class="card-text">Channel : {{message.channel.name}}</p>
-  
+        <a routerLink="/messages/{{message.id}}/delete">Supprimer</a>
+
       </div>
     </div>
   </div>
@@ -21,6 +23,8 @@
   <button type="submit" class="btn btn-accueil">
     <a routerLink="/">Retour à l'accueil</a>
   </button>
+</div>
+
 </div>
 
 

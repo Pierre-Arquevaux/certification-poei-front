@@ -36,4 +36,5 @@ export class ListComponent implements OnInit{
     this.channelService.getChannelsFromDatabase(url)
     this.channelService.channels.subscribe(data => this.channels = data)
   }
+  
 }
