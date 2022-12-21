@@ -1,15 +1,21 @@
-<h2> Update channel</h2>
+<h2>Edit a channel</h2>
 
+<!-- form [formGroup]="myForm" novalidate (ngSubmit)="submitChannel(myForm.value, myForm.valid)" -->
+<form [formGroup]="form" novalidate>
+
+<!-- name -->
 <div class="form-group">
-    <label for="name">Donner un nom à votre channel</label>
-    <input
-        type="text"
-        class="form-control"
-        id="name"
-        [formControl]="form.controls.name">
-  </div>
-  
-  
-  <!-- submit -->
-  <button type="submit" (click)="submitChannel()">Update channel</button>
-  
+    <label for="title">Channel Name</label>
+    <input 
+        type="text" 
+        class="form-control" 
+        id="name" 
+        formControlName="name">
+</div>
+
+
+
+<!-- submit btn -->
+<button type="button" (click)="submitChannel()">Edit channel</button>
+
+</form>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ChannelService } from '../../service/channel.service';
 
 
@@ -23,7 +23,8 @@ export class AddComponent {
 
 
   constructor(
-    private channelService : ChannelService
+    private channelService : ChannelService,
+    private router: Router
   ){}
 
 
