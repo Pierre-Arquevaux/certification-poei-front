@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ChannelService } from '../../service/channel.service';
 
 
-const url = "http://localhost:8080/channel/update" 
+const url = "http://localhost:8080/channel/put" 
 
 
 @Component({
