@@ -1,4 +1,15 @@
-<h2>{{ channel?.name }}</h2>
+<h2>{{ channel.name }}</h2>
 
-<div>Id: {{ channel?.id }}</div>
+<div>Id: {{ channel.id }}</div>
 
+<div class="row">
+  <div *ngFor="let message of messages" class="col-lg-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{message.content}}</h5>
+        <p class="card-text">Un magnifique channel  </p>
+        <a href="#" class="btn btn-warning">Voir les membres du channel</a>
+      </div>
+    </div>
+  </div>
+</div>

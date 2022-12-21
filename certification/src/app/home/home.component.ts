@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit{
       this.channels = data.channelList;
       this.messages = data.messageList;
     });
-    // this.generalService.generals.subscribe(data => this.generals = data)
+
   }
 
 }
