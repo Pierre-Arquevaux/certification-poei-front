@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeModule } from './home/home.module';
 import { UsersModule } from './users/users.module';
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { UsersModule } from './users/users.module';
   ],
   imports: [
     BrowserModule,
+    CoreModule,
     HomeModule,
     UsersModule,
     AppRoutingModule,
