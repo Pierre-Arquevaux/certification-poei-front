@@ -1,1 +1,16 @@
-<p>add works!</p>
+<h2> Create a new channel</h2>
+
+<!-- title -->
+
+<div class="form-group">
+  <label for="name">Donner un nom à votre channel</label>
+  <input
+      type="text"
+      class="form-control"
+      id="name"
+      [formControl]="form.controls.name">
+</div>
+
+
+<!-- submit -->
+<button type="submit" (click)="submitChannel()">Create new channel</button>

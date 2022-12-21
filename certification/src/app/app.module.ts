@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeModule } from './home/home.module';
 import { UsersModule } from './users/users.module';
 import { CoreModule } from './core/core.module';
+import { ChannelsModule } from './channels/channels.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     HomeModule,
     UsersModule,
+    ChannelsModule,
     AppRoutingModule,
     NgbModule
   ],
