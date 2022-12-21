@@ -1,1 +1,27 @@
-<p>list works!</p>
+<h2>{{pageTitle}}</h2>
+
+
+
+<a routerLink="/messages/add">Create New message</a>
+
+
+
+<!-- Afficher un message si aucun message dans la liste -->
+
+<ul *ngIf="messages.length; else noMessageMessage">
+
+  <li *ngFor="let message of messages; let i= index">
+
+    <a [routerLink]="['/messages', message.id]">{{message.content}}</a>
+
+   </li>
+
+</ul>
+
+
+
+<ng-template #noMessageMessage>
+
+  <div>Aucun livre en BDD</div>
+
+</ng-template>
