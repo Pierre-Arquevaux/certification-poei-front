@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { MessagesRoutingModule } from './messages-routing.module';
 import { ListComponent } from './components/list/list.component';
 import { AddComponent } from './components/add/add.component';
-import { EditComponent } from './components/edit/edit.component';
 import { DeleteComponent } from './components/delete/delete.component';
-
 
 
 @NgModule({
   declarations: [
     ListComponent,
     AddComponent,
-    EditComponent,
     DeleteComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MessagesRoutingModule
   ]
 })
 export class MessagesModule { }
