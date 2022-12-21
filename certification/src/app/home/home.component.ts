@@ -11,7 +11,8 @@ const url = "http://localhost:8080/general"
 export class HomeComponent implements OnInit{
 
   public pageTitle: string = 'infos du general';
-  public generals:any[] = [];
+  public channels:any[] = [];
+  public messages:any[] = [];
 
   constructor(
     private generalService: GeneralService,
@@ -21,7 +22,10 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {
 
     this.generalService.getGeneralFromDatabase(url)
-    this.generalService.generals.subscribe(data => console.log(data));
+    this.generalService.generals.subscribe(data => {
+      this.channels = data.channelList;
+      this.messages = data.messageList;
+    });
     // this.generalService.generals.subscribe(data => this.generals = data)
   }
 
