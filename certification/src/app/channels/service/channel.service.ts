@@ -70,19 +70,39 @@ export class ChannelService {
    * Update Channel
    */
 
-  public updateChannel(url:string, channel:any) {
-
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-    });
-
-    const options = {
-      headers,
-    };
-
-    this.httpClient
-      .post(url, channel, options)
-
-      .subscribe((response) => console.log(response));
-  }
-}
+   public editChannel(url: string, id: number|undefined, channel: any): void 
+   {
+     url = `${url}/put/${id}`;
+ 
+     const headers = new HttpHeaders({
+       'Content-Type': 'application/json',
+     });
+ 
+     const options = {
+       headers
+     };
+ 
+     // console.log(url, channel);
+     this.httpClient.patch(url, channel, options)
+       .subscribe(response => console.log(response));
+   }
+ 
+ 
+   public deleteChannel(url: string, id: number|undefined): void 
+   {
+     url = `${url}/${id}`;
+ 
+     // const headers = new HttpHeaders({
+     //   'Content-Type': 'application/json',
+     // });
+ 
+     // const options = {
+     //   headers
+     // };
+ 
+     // console.log(url, channel);
+     // this.httpClient.delete(url, options)
+     this.httpClient.delete(url)
+       .subscribe(response => console.log(response));
+   }
+ }
