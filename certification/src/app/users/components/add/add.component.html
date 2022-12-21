@@ -1,1 +1,17 @@
-<p>add works!</p>
+<h2> Create a new user</h2>
+
+<div class="addcomponent">
+  <!-- title -->
+<div class="form-group">
+  <label for="username">Pseudo</label>
+  <input
+      type="text"
+      class="form-control"
+      id="username"
+      [formControl]="form.controls.username">
+</div>
+
+<!-- submit -->
+<button type="submit" (click)="submitUser()">Let's go</button>
+</div>
+
