@@ -6,6 +6,9 @@ import { ListComponent } from './components/list/list.component';
 import { AddComponent } from './components/add/add.component';
 import { EditComponent } from './components/edit/edit.component';
 import { DeleteComponent } from './components/delete/delete.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ShowComponent } from './components/show/show.component';
 
 
 @NgModule({
@@ -13,10 +16,13 @@ import { DeleteComponent } from './components/delete/delete.component';
     ListComponent,
     AddComponent,
     EditComponent,
-    DeleteComponent
+    DeleteComponent,
+    ShowComponent
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     ChannelsRoutingModule
   ]
 })
