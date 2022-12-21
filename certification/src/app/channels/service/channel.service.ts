@@ -41,7 +41,7 @@ export class ChannelService {
    */
 
   public getChannel(url: string, id: number) {
-    url = `${url}/list/${id}`;
+    url = `${url}/${id}`;
     this.httpClient
       .get(url)
       .subscribe((response) => this.channel.next(response));
@@ -70,36 +70,36 @@ export class ChannelService {
    * Update Channel
    */
 
-   public editChannel(url: string, id: number|undefined, channel: any): void 
+   public editChannel(url: string, id: number|undefined, channel: any): void
    {
      url = `${url}/put/${id}`;
- 
+
      const headers = new HttpHeaders({
        'Content-Type': 'application/json',
      });
- 
+
      const options = {
        headers
      };
- 
+
      // console.log(url, channel);
      this.httpClient.patch(url, channel, options)
        .subscribe(response => console.log(response));
    }
- 
- 
-   public deleteChannel(url: string, id: number|undefined): void 
+
+
+   public deleteChannel(url: string, id: number|undefined): void
    {
      url = `${url}/${id}`;
- 
+
      // const headers = new HttpHeaders({
      //   'Content-Type': 'application/json',
      // });
- 
+
      // const options = {
      //   headers
      // };
- 
+
      // console.log(url, channel);
      // this.httpClient.delete(url, options)
      this.httpClient.delete(url)

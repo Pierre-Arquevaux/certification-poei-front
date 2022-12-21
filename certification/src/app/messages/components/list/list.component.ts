@@ -18,6 +18,8 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.messageService.getMessagesFromDatabase(url);
-    this.messageService.messages.subscribe((data) => (this.messages = data));
+    this.messageService.messages.subscribe(data => {
+      this.messages = data;
+    })
   }
 }
