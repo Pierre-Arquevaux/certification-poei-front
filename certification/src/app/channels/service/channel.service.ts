@@ -97,6 +97,10 @@ export class ChannelService {
 
   }
 
+  public updateChannel(url:string, channel:any){
+    
+  }
+
 
 }
 
