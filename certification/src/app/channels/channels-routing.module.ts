@@ -17,24 +17,16 @@ const routes: Routes = [
 
       //Ajoute un channel (Create)
 
-
-
       {
-
         path: 'add',
 
         component: AddComponent,
-
       },
 
-
-
       {
-
         path: ':id',
 
         children: [
-
           //Affiche un channel (Read)
 
           {
@@ -47,11 +39,9 @@ const routes: Routes = [
           //> site.com/channel/42/edit
 
           {
-
             path: 'edit',
 
             component: EditComponent,
-
           },
 
           // Supprimer un channel (Delete)
@@ -59,28 +49,18 @@ const routes: Routes = [
           // > site.com/channel/42/delete
 
           {
-
             path: 'delete',
 
             component: DeleteComponent,
-
           },
-
         ],
-
       },
-
     ],
-
   },
-
 ];
-
-
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-
 export class ChannelsRoutingModule {}

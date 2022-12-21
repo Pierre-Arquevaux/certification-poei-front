@@ -1,38 +1,86 @@
-<!-- barre fixe -->
-<nav class="navbar navbar-expand  px-2">
-
-  <a routerLink="/">Slacke</a>
-
-  <form class="d-flex me-5">
-    <input type="search" placeholder="Votre recherche" class="form-control me-2">
-    <button class="btn btn-outline-light" type="submit">Recherche</button>
-  </form>
-
-  <button type="button" class="btn btn-light"><a routerLink="/users/add">Nouvel Utilisateur</a></button>
-  <button type="button" class="btn btn-light"><a routerLink="/users">Membres du Slacke</a></button>
-</nav>
-
 <!-- SideBar -->
 <main class="main">
   <div class="side-nav-content">
+    <p class="text-center">Channels</p>
     <ul class="nav-list">
-      <p>Channels</p>
-      <button type="button" class="btn btn-light"><a routerLink="/channels">Voir les channels</a></button>
-      <button type="button" class="btn btn-light"><a routerLink="/channels/add">New Channel</a></button>
       <li *ngFor="let channel of channels" class="nav-list-item">
         <i class="fas fa-hashtag"></i>
         <span>
-          <a routerLink="/channels/{{channel.id}}">{{channel.name}}</a>
+          <a routerLink="/channels/{{ channel.id }}">{{ channel.name }}</a>
         </span>
       </li>
     </ul>
+
+    <div class="container-channel text-center">
+      <button type="button" class="btn btn-side">
+        <a routerLink="/channels">Voir les channels</a>
+      </button>
+      <button type="button" class="btn btn-side">
+        <a routerLink="/channels/add">New Channel</a>
+      </button>
+      <p class="text-center">Utilisateurs</p>
+      <button type="button" class="btn btn-side">
+        <a routerLink="/users">Membres du Slacke</a>
+      </button>
+      <button type="button" class="btn btn-side">
+        <a routerLink="/users/add">Nouvel Utilisateur</a>
+      </button>
+    </div>
   </div>
 
   <!-- Main Area -->
   <div class="display-area p-3">
-    <p class="fs-1 fw-bold">Display Area</p>
+    <div class="container-message">
+      <div *ngFor="let message of messages" class="card">
+        <h5 class="card-header">
+          {{ message.user.username }} <span>le {{ message.lastUpdate }}</span>
+        </h5>
+        <div class="card-body">
+          <p class="card-text">
+            {{ message.content }}
+          </p>
+          <a
+            routerLink="/messages/{{ message.id }}/delete"
+            class="btn btn-primary"
+            >Supprimer Message</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="container-sendingmessage">
+      <form>
+        <div class="row">
+          <div class="form-group col-lg-4">
+            <label for="exampleFormControlSelect1">Select User</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Pierre</option>
+              <option>Morgane</option>
+              <option>Joatan</option>
+            </select>
+          </div>
+
+          <div class="form-group col-lg-4">
+            <label for="exampleFormControlSelect1">Channel</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>General</option>
+              <option>Java</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Example textarea</label>
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+          ></textarea>
+        </div>
+
+        <div class="col-auto my-1">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
   </div>
 </main>
-
-
-

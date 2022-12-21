@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ChannelService } from '../../service/channel.service';
 
-const url = "http://localhost:8080/channel/list";
+const url = "http://localhost:8080/channel";
 
 @Component({
   selector: 'app-show',
@@ -19,7 +19,7 @@ export class ShowComponent implements OnInit {
     private route: ActivatedRoute
   ){}
 
-  ngOnInit(): void 
+  ngOnInit(): void
   {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     // this.channel = this.channelService.getChannel( this.id );
