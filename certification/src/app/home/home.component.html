@@ -33,7 +33,7 @@
     <div class="container-message">
       <div *ngFor="let message of messages" class="card">
         <h5 class="card-header">
-          {{ message.user.username }} <span>le {{ message.lastUpdate }}</span>
+          {{ message.user.username }} <span>le {{ message.lastUpdate | date:'short' }}</span>
         </h5>
         <div class="card-body">
           <p class="card-text">

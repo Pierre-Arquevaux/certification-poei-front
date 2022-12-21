@@ -65,4 +65,24 @@ export class ChannelService {
 
       .subscribe((response) => console.log(response));
   }
+
+  /**
+   * Update Channel
+   */
+
+  public updateChannel(url:string, channel:any) {
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+
+    const options = {
+      headers,
+    };
+
+    this.httpClient
+      .post(url, channel, options)
+
+      .subscribe((response) => console.log(response));
+  }
 }
