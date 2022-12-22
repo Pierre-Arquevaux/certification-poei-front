@@ -1,15 +1,59 @@
-<h2>{{ channel.name }}</h2>
+<main class="main">
 
-<div>Id: {{ channel.id }}</div>
 
-<div class="row">
-  <div *ngFor="let message of messages" class="col-lg-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">{{message.content}}</h5>
-        <p class="card-text">Un magnifique channel  </p>
-        <a href="#" class="btn btn-warning">Voir les membres du channel</a>
+  <!-- Main Area -->
+  <div class="display-area p-3">
+    <h2>Bienvenue dans le canal <span>{{ channel.name }}</span></h2>
+    <div class="container-message">
+      <div *ngFor="let message of messages" class="card">
+        <h5 class="card-header">
+          {{ message.user.username }} <span>le {{ message.lastUpdate | date:'short' }}</span>
+        </h5>
+        <div class="card-body">
+          <p class="card-text">
+            {{ message.content }}
+          </p>
+          <a
+            routerLink="/messages/{{ message.id }}/delete"
+            ><i class="fas fa-trash"></i></a
+          >
+        </div>
       </div>
     </div>
+    <div class="container-sendingmessage">
+      <form>
+        <div class="row">
+          <div class="form-group col-lg-4">
+            <label for="exampleFormControlSelect1">Select User</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Pierre</option>
+              <option>Morgane</option>
+              <option>Joatan</option>
+            </select>
+          </div>
+
+          <div class="form-group col-lg-4">
+            <label for="exampleFormControlSelect1">Channel</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>General</option>
+              <option>Java</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Example textarea</label>
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+          ></textarea>
+        </div>
+
+        <div class="col-auto my-1">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
+</main>

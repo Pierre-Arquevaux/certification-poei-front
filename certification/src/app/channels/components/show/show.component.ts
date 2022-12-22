@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ChannelService } from '../../service/channel.service';
+import { MessageService } from 'src/app/messages/service/message.service';
 
 const url = "http://localhost:8080/channel/list";
 
@@ -17,6 +18,7 @@ export class ShowComponent implements OnInit {
 
   constructor(
     private channelService: ChannelService,
+    private messageService : MessageService,
     private route: ActivatedRoute
   ){}
 
@@ -27,8 +29,17 @@ export class ShowComponent implements OnInit {
     this.channelService.getChannel(url, this.id);
     this.channelService.channel.subscribe(data => {
       this.channel = data;
-      this.messages = data.messages;
     });
+
+    this.messageService.getMessagesFromDatabase("http://localhost:8080/message/list")
+    this.messageService.messages.subscribe(response => {
+      // this.messages = response
+      for(let item of response) {
+        if(item.channel.id == this.id) {
+          this.messages.push(item)
+        }
+      }
+    })
   }
 
 }
