@@ -30,3 +30,43 @@ button > a{
   color: white;
   text-decoration: none;
 }
+
+@media screen and (max-width: 1800px) {
+  .container {
+    position: absolute;
+    top : 30%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .container {
+    position: absolute;
+    top : 30%;
+    left : 60%;
+    transform: translate(-50%, -50%);
+  }
+
+  button{
+    margin-top: 8rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+
+  .container{
+    position: absolute;
+    top : 210%;
+    left : 60%;
+    transform: translate(-50%, -50%);
+  }
+
+  .row{
+    width: 60%;
+    margin: auto;
+    margin-top: 4rem;
+  }
+
+
+}

@@ -34,3 +34,50 @@ button > a{
   color: white;
   text-decoration: none;
 }
+
+@media screen and (max-width: 1800px) {
+  .container {
+    position: absolute;
+    top : 30%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .container {
+    left : 60%;
+  }
+
+  button{
+    margin-top: 8rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+
+  .container{
+    padding-top: 65rem;
+    overflow-y: scroll;
+  }
+
+  .row{
+    width: 60%;
+    margin: auto;
+    margin-top: 4rem;
+  }
+
+@media screen and (max-width: 450px) {
+
+  .row{
+    width: 80%;
+    margin: auto;
+    margin-top: 4rem;
+  }
+  /* .card{
+    width: 80vw !important;
+    margin: auto !important;
+  } */
+
+}
+}

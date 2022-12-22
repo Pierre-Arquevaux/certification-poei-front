@@ -52,17 +52,36 @@ i{
   margin: auto;
 }
 
-@media screen and (max-width: 950px) {
-  .side-nav-content{
-    display: none;
+@media screen and (max-width: 1100px) {
+  .container-sendingmessage {
+    position: absolute;
+    bottom : 5%;
+    left : 50%
   }
+}
 
+@media screen and (max-width: 450px) {
   .display-area{
     left: 0;
-    width : calc(100%);
+    height: calc(100vh - 70px);
+    margin-top : 2rem;
+    width : 100%
   }
 
-  form{
-    display: none !important;
+  .container-message {
+    max-height : 45vh;
+
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .card-header {
+    font-size: 18px;
+  }
+
+  .card {
+    font-size: 18px;
   }
 }
