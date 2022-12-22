@@ -1,58 +1,71 @@
 <main class="main">
-
-
   <!-- Main Area -->
   <div class="display-area p-3">
-    <h2>Bienvenue dans le canal <span>{{ channel.name }}</span></h2>
+    <h2>
+      Bienvenue dans le canal <span>{{ channel.name }}</span>
+    </h2>
     <div class="container-message">
       <div *ngFor="let message of messages" class="card">
         <h5 class="card-header">
-          {{ message.user.username }} <span>le {{ message.lastUpdate | date:'short' }}</span>
+          {{ message.user.username }}
+          <span
+            >le {{ message.lastUpdate | date : "dd MMMM YYYY à HH:mm" }}</span
+          >
         </h5>
         <div class="card-body">
           <p class="card-text">
             {{ message.content }}
           </p>
-          <a
-            routerLink="/messages/{{ message.id }}/delete"
-            ><i class="fas fa-trash"></i></a
-          >
+          <a routerLink="/messages/{{ message.id }}/delete"
+            ><i class="fas fa-trash"></i
+          ></a>
         </div>
       </div>
     </div>
-    <div class="container-sendingmessage">
+    <div class="container-sendingmessage text-center">
+      <!-- user -->
+      <div class="form-group">
+        <label for="user">Membre</label>
+        <select
+          class="form-control"
+          id="user"
+          [formControl]="form.controls.user"
+        >
+          <option *ngFor="let user of users" value="{{ user.id }}">
+            {{ user.username }}
+          </option>
+        </select>
+      </div>
 
-  <!-- user -->
-  <div class="form-group">
-    <label for="user">user</label>
-    <select  class="form-control" id="user" [formControl]="form.controls.user">
-      <option *ngFor="let user of users" value="{{user.id}}">{{user.username}}</option>
-    </select>
-  </div>
+      <!-- channel -->
+      <div class="form-group">
+        <label for="channel">Channel</label>
+        <select
+          class="form-control"
+          id="channel"
+          [formControl]="form.controls.channel"
+        >
+          <option value="{{ channel.id }}">{{ channel.name }}</option>
+        </select>
+      </div>
 
-  <!-- channel -->
-  <div class="form-group">
-    <label for="channel">channel</label>
-    <select class="form-control" id="channel" [formControl]="form.controls.channel">
-      <option value="{{channel.id}}">{{channel.name}}</option>
-    </select>
-  </div>
+      <!-- content -->
+      <div class="form-group">
+        <label for="content"></label>
+        <input
+          type="text"
+          class="form-control"
+          id="content"
+          placeholder="Votre message"
+          [formControl]="form.controls.content"
+        />
+      </div>
 
-  <!-- content -->
-  <div class="form-group">
-    <label for="content">Contenu du message</label>
-    <input
-      type="text"
-      class="form-control"
-      id="content"
-      [formControl]="form.controls.content"
-    />
-  </div>
-
-        <div class="col-auto my-1">
-          <button type="submit" class="btn btn-primary" (click)="submitMessage()">Submit</button>
-        </div>
-
+      <div class="col-auto my-1">
+        <button type="submit" class="btn btn-primary" (click)="submitMessage()">
+          Submit
+        </button>
+      </div>
     </div>
   </div>
 </main>

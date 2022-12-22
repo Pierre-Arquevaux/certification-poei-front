@@ -28,9 +28,23 @@ i{
 
 
 /* message container */
+
+.card{
+  margin: 1rem;
+}
+
 .container-message {
   max-height : 65vh;
   overflow-y: scroll;
+}
+
+.container-sendingmessage{
+  position: fixed;
+  left : 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  bottom: 1rem;
+  margin: auto;
 }
 
 .container-sendingmessage{

@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ChannelService } from '../../service/channel.service';
 
 
-const url = "http://localhost:8080/channel/delete" 
+const url = "http://localhost:8080/channel/delete"
 
 
 @Component({
@@ -22,7 +22,7 @@ export class DeleteComponent {
     private router: Router,
   ){}
 
-  ngOnInit(): void 
+  ngOnInit(): void
   {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     // this.book = this.channelService.getChannel( this.id );
@@ -33,6 +33,11 @@ export class DeleteComponent {
   proceedToDelete()
   {
     this.channelService.deleteChannel(url, this.id);
-    this.router.navigate(['/channels']);
+    this.redirectTo('/channels/')
   }
+
+  public redirectTo(url:string) {
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate([url]))
+  }
+
 }

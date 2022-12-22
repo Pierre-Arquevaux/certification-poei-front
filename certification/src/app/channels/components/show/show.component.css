@@ -29,6 +29,14 @@ i{
   margin: 1rem;
 }
 
+.card-body{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-body>i {
+  font-size: 20px;
+}
 /* message container */
 .container-message {
   max-height : 60vh;
@@ -37,8 +45,11 @@ i{
 
 .container-sendingmessage{
   position: fixed;
+  left : 50%;
+  transform: translateX(-50%);
   width: 50%;
   bottom: 1rem;
+  margin: auto;
 }
 
 @media screen and (max-width: 950px) {
