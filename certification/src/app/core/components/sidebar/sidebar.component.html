@@ -5,23 +5,27 @@
   <ul class="nav-list">
     <li *ngFor="let channel of channels" class="nav-list-item">
       <i class="fas fa-hashtag"></i>
-        <a href="/channels/{{channel.id}}">{{ channel.name }}</a>
+      <a class="nav-a" routerLink="/channels/{{channel.id}}">{{ channel.name.toLowerCase() }}</a>
     </li>
   </ul>
 
   <div class="container-channel text-center">
     <button type="button" class="btn btn-side">
-      <a href="/channels">Voir les channels</a>
+      <a routerLink="/channels">Nos channels</a>
     </button>
     <button type="button" class="btn btn-side">
-      <a href="/channels/add">New Channel</a>
+      <a routerLink="/channels/add">Nouveau channel</a>
     </button>
     <p class="text-center">Utilisateurs</p>
     <button type="button" class="btn btn-side">
-      <a href="/users">Membres du Slacke</a>
+      <a routerLink="/users">Membres du Slacke</a>
     </button>
     <button type="button" class="btn btn-side">
-      <a href="/users/add">Nouvel Utilisateur</a>
+      <a routerLink="/users/add">Nouvel Utilisateur</a>
+    </button>
+    <p class="text-center">Messages</p>
+    <button type="button" class="btn btn-side">
+      <a routerLink="/messages">Tous les messages</a>
     </button>
   </div>
 </div>

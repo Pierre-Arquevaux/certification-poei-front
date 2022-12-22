@@ -53,12 +53,27 @@ i{
   background-color: #fff8e9;
   width : 200px;
   margin: 0.7rem;
+
+}
+
+.btn-side>a {
+  text-decoration: none;
+}
+
+.nav-a{
+  text-decoration: none;
+  color: white;
 }
 
 /* message container */
 .container-message {
   height: 65vh;
   overflow-y: scroll;
+}
+
+p{
+  text-decoration: underline;
+  margin-top: 2rem;
 }
 
 @media screen and (max-width: 950px) {

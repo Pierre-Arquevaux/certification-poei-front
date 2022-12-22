@@ -1,1 +1,35 @@
-<p>add works!</p>
+<div class="container">
+  <h2>Create a new message</h2>
+
+  <!-- user -->
+  <div class="form-group">
+    <label for="user">user</label>
+    <select class="form-control" id="user" [formControl]="form.controls.user">
+      <option>1</option>
+      <option>2</option>
+    </select>
+  </div>
+
+  <!-- channel -->
+  <div class="form-group">
+    <label for="channel">channel</label>
+    <select class="form-control" id="channel" [formControl]="form.controls.channel">
+      <option value="1">General</option>
+      <option value="2">Java</option>
+    </select>
+  </div>
+
+  <!-- content -->
+  <div class="form-group">
+    <label for="content">Contenu du message</label>
+    <input
+      type="text"
+      class="form-control"
+      id="content"
+      [formControl]="form.controls.content"
+    />
+  </div>
+
+  <!-- submit btn -->
+  <button type="button" (click)="submitMessage()">Create new book</button>
+</div>

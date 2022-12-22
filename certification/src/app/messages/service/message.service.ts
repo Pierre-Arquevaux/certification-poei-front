@@ -40,18 +40,20 @@ export class MessageService {
     return this._message;
    }
 
-  // public createMessage(url: string, user: any) {
+   public createMessage(url: string, message: any) {
 
-  //   const headers = new HttpHeaders({
-  //     'Content-Type' : 'application/json'
-  //   });
+    const headers = new HttpHeaders({
+       'Content-Type' : 'application/json'
+     });
 
-  //   const options = {
-  //     headers
-  //   }
-  //   this.httpClient.post(url, message, options)
-  //     .subscribe(response => console.log(response));
-  // }
+     const options = {
+       headers
+     }
+     console.log(message);
+
+     this.httpClient.post(url, message, options)
+       .subscribe(response => console.log(response));
+   }
 
   public deleteMessage(url: string, id: number|undefined): void
   {

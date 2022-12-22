@@ -6,6 +6,7 @@ import { ChannelService } from '../../service/channel.service';
 
 
 
+
 const url = "http://localhost:8080/channel/post"
 
 
@@ -32,7 +33,9 @@ export class AddComponent {
   public submitChannel(): void {
     // console.log(this.form.value);
     this.channelService.createChannel(url, this.form.value)
+    this.router.navigate(['/channels']);
   }
+
 }
 
 
