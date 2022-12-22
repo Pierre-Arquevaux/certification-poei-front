@@ -12,7 +12,7 @@
           <h5 class="card-title">{{ message.user.username }}</h5>
           <p class="card-text">{{ message.content }}</p>
           <p class="card-text">Channel : {{ message.channel.name }}</p>
-          <p class="font-weight-light">à : {{message.lastUpdate | date:'HH:mm '}} le {{message.lastUpdate | date:'LL MMMM YYYY '}}</p>
+          <p class="font-weight-light">le {{message.lastUpdate | date:'dd MMMM YYYY à HH:mm'}}</p>
           <a class="btn btn-warning" routerLink="/messages/{{ message.id }}/delete">Supprimer</a>
         </div>
       </div>
