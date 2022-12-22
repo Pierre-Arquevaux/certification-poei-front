@@ -1,0 +1,27 @@
+<!-- side bar -->
+
+<div class="side-nav-content">
+  <p class="text-center">Channels</p>
+  <ul class="nav-list">
+    <li *ngFor="let channel of channels" class="nav-list-item">
+      <i class="fas fa-hashtag"></i>
+        <a href="/channels/{{channel.id}}">{{ channel.name }}</a>
+    </li>
+  </ul>
+
+  <div class="container-channel text-center">
+    <button type="button" class="btn btn-side">
+      <a href="/channels">Voir les channels</a>
+    </button>
+    <button type="button" class="btn btn-side">
+      <a href="/channels/add">New Channel</a>
+    </button>
+    <p class="text-center">Utilisateurs</p>
+    <button type="button" class="btn btn-side">
+      <a href="/users">Membres du Slacke</a>
+    </button>
+    <button type="button" class="btn btn-side">
+      <a href="/users/add">Nouvel Utilisateur</a>
+    </button>
+  </div>
+</div>
