@@ -1,5 +1,5 @@
 .container{
-  margin-top: 7rem;
+  margin-top: 5rem;
 }
 
 .row{
@@ -13,12 +13,16 @@
 }
 
 button{
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 button > a{
   color: white;
   text-decoration: none;
+}
+
+.btn-warning{
+  margin: 1rem;
 }
 
 .btn-accueil{

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ChannelService } from '../../service/channel.service';
+
 
 
 
@@ -23,7 +24,8 @@ export class AddComponent {
 
 
   constructor(
-    private channelService : ChannelService
+    private channelService : ChannelService,
+    private router: Router
   ){}
 
 
@@ -31,7 +33,9 @@ export class AddComponent {
   public submitChannel(): void {
     // console.log(this.form.value);
     this.channelService.createChannel(url, this.form.value)
+    this.router.navigate(['/channels']);
   }
+
 }
 
 

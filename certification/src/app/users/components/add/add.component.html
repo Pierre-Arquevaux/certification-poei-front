@@ -1,17 +1,25 @@
-<h2> Create a new user</h2>
+<div class="container ">
+  <h2>Créé un nouvel utilisateur</h2>
 
-<div class="addcomponent">
-  <!-- title -->
-<div class="form-group">
-  <label for="username">Pseudo</label>
-  <input
-      type="text"
-      class="form-control"
-      id="username"
-      [formControl]="form.controls.username">
+  <div class="addcomponent">
+    <!-- title -->
+    <div class="form-group">
+      <label for="username">Pseudo</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        placeholder="Votre pseudo"
+        [formControl]="form.controls.username"
+      />
+    </div>
+
+    <!-- submit -->
+    <div class="button text-center">
+      <button type="submit" class="btn btn-primary" (click)="submitUser()">
+        Let's go
+      </button>
+    </div>
+  </div>
+
 </div>
-
-<!-- submit -->
-<button type="submit" (click)="submitUser()">Let's go</button>
-</div>
-

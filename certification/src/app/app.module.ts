@@ -12,6 +12,7 @@ import { ChannelsModule } from './channels/channels.module';
 import { MessagesModule } from './messages/messages.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -20,6 +21,7 @@ import { MessagesModule } from './messages/messages.module';
     BrowserModule,
     CoreModule,
     HomeModule,
+    MessagesModule,
     UsersModule,
     ChannelsModule,
     MessagesModule,

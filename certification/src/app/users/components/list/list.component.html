@@ -1,9 +1,25 @@
-<a routerLink="/users/add">Créé un utilisateur</a>
+<div class="container text-center">
+  <a routerLink="/users/add">Créé un utilisateur</a>
 
-<!-- Afficher un message si aucun livre dans la liste -->
-<ul>
-  <li *ngFor="let user of users; let i= index">
-    <a [routerLink]="['/users', user.id]">{{user.username}}</a>
-   </li>
-</ul>
+  <div class="button text-center">
+    <button class="btn btn-lg btn-primary">
+      <a routerLink="/users/add">Nouvel utilisateur</a>
+    </button>
+  </div>
 
+  <div class="row">
+    <div *ngFor="let user of users" class="col-lg-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ user.username }}</h5>
+          <p class="card-text">Une super personne</p>
+          <a routerLink="/users/{{ user.id }}/delete" class="btn btn-warning"
+            >Supprimer</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

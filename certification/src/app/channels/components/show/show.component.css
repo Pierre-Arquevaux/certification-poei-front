@@ -1,0 +1,68 @@
+main{
+  position: absolute;
+  width : 100%;
+  top: 4rem;
+  z-index: 1;
+}
+
+
+span{
+  color : #93b6d9;
+}
+
+i{
+  margin-right: 1rem;
+  margin-left: 2rem;
+  font-size: 40px;
+}
+
+.display-area{
+  background-color: #fef8ea;
+  position : absolute;
+  left: 250px;
+  height: calc(100vh - 70px);
+  top : -7px;
+  width : calc(100% - 250px);
+}
+
+.card{
+  margin: 1rem;
+}
+
+.card-body{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-body>i {
+  font-size: 20px;
+}
+/* message container */
+.container-message {
+  max-height : 60vh;
+  overflow-y: scroll;
+}
+
+.container-sendingmessage{
+  position: fixed;
+  left : 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  bottom: 1rem;
+  margin: auto;
+}
+
+@media screen and (max-width: 950px) {
+  .side-nav-content{
+    display: none;
+  }
+
+  .display-area{
+    left: 0;
+    width : calc(100%);
+  }
+
+  form{
+    display: none !important;
+  }
+}

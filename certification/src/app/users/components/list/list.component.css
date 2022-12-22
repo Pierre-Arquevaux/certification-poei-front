@@ -1,0 +1,32 @@
+.row{
+  width: 80%;
+  margin: auto;
+  margin-top: 4rem;
+}
+
+.card{
+  margin: 1rem;
+}
+
+button{
+  margin-top: 4rem;
+}
+
+button > a{
+  color: white;
+  text-decoration: none;
+}
+
+.btn-accueil{
+  background-color: #ffcc5f;
+  font-size: 1.5rem;
+}
+
+.btn-accueil>a{
+  color: white;
+  text-decoration: none;
+}
+
+.btn-warning{
+  margin: 0.5rem;
+}
