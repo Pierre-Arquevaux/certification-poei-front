@@ -25,11 +25,13 @@ i{
   width : calc(100% - 250px);
 }
 
-
+.card{
+  margin: 1rem;
+}
 
 /* message container */
 .container-message {
-  max-height : 65vh;
+  max-height : 60vh;
   overflow-y: scroll;
 }
 

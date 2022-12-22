@@ -21,36 +21,38 @@
       </div>
     </div>
     <div class="container-sendingmessage">
-      <form>
-        <div class="row">
-          <div class="form-group col-lg-4">
-            <label for="exampleFormControlSelect1">Select User</label>
-            <select  class="form-control" id="exampleFormControlSelect1">
-              <option *ngFor="let user of users">{{ user.username }}</option>
-            </select>
-          </div>
 
-          <div class="form-group col-lg-4">
-            <label for="exampleFormControlSelect1">Channel</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option value="{{channel.id}}">{{ channel.name }}</option>
-            </select>
-          </div>
-        </div>
+  <!-- user -->
+  <div class="form-group">
+    <label for="user">user</label>
+    <select  class="form-control" id="user" [formControl]="form.controls.user">
+      <option *ngFor="let user of users" value="{{user.id}}">{{user.username}}</option>
+    </select>
+  </div>
 
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Example textarea</label>
-          <textarea
-            class="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
-          ></textarea>
-        </div>
+  <!-- channel -->
+  <div class="form-group">
+    <label for="channel">channel</label>
+    <select class="form-control" id="channel" [formControl]="form.controls.channel">
+      <option value="{{channel.id}}">{{channel.name}}</option>
+    </select>
+  </div>
+
+  <!-- content -->
+  <div class="form-group">
+    <label for="content">Contenu du message</label>
+    <input
+      type="text"
+      class="form-control"
+      id="content"
+      [formControl]="form.controls.content"
+    />
+  </div>
 
         <div class="col-auto my-1">
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary" (click)="submitMessage()">Submit</button>
         </div>
-      </form>
+
     </div>
   </div>
 </main>
