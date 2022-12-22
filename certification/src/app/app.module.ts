@@ -10,7 +10,7 @@ import { UsersModule } from './users/users.module';
 import { CoreModule } from './core/core.module';
 import { ChannelsModule } from './channels/channels.module';
 import { MessagesModule } from './messages/messages.module';
-import { MessagesModule } from './messages/messages.module';
+
 
 
 @NgModule({
