@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { ChannelService } from '../../service/channel.service';
+import { ChannelService } from 'src/app/channels/service/channel.service';
+
 
 const url = "http://localhost:8080/channel/list"
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css'],
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.css'],
 })
 
-export class ListComponent implements OnInit{
-
-  public pageTitle: string = 'Liste des channels';
+export class SidebarComponent implements OnInit{
 
   public channels:any[] = [];
 
@@ -29,4 +28,3 @@ export class ListComponent implements OnInit{
   }
 
 }
-

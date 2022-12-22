@@ -18,9 +18,7 @@ main{
   background-color: #93b6d9;
 }
 
-span{
-  color : #93b6d9;
-}
+
 
 i{
   margin-right: 1rem;
@@ -59,7 +57,7 @@ i{
 
 /* message container */
 .container-message {
-  height: 55vh;
+  height: 65vh;
   overflow-y: scroll;
 }
 
