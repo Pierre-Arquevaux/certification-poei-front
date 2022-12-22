@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ChannelService } from '../../service/channel.service';
 import { MessageService } from 'src/app/messages/service/message.service';
+import { UserService } from 'src/app/users/service/user.service';
+
 
 const url = "http://localhost:8080/channel/list";
 
@@ -15,10 +17,12 @@ export class ShowComponent implements OnInit {
   public id?: number;
   public channel?: any;
   public messages:any[] = [];
+  public users: any[] = [];
 
   constructor(
     private channelService: ChannelService,
     private messageService : MessageService,
+    private userService : UserService,
     private route: ActivatedRoute
   ){}
 
@@ -40,6 +44,10 @@ export class ShowComponent implements OnInit {
         }
       }
     })
+
+    this.userService.getUsersFromDatabase("http://localhost:8080/user/list");
+    this.userService.users.subscribe((data) => (this.users = data));
+
   }
 
 }
