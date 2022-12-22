@@ -1,32 +1,6 @@
 <!-- SideBar -->
 <main class="main">
-  <div class="side-nav-content">
-    <p class="text-center">Channels</p>
-    <ul class="nav-list">
-      <li *ngFor="let channel of channels" class="nav-list-item">
-        <i class="fas fa-hashtag"></i>
-        <span>
-          <a routerLink="/channels/{{ channel.id }}">{{ channel.name }}</a>
-        </span>
-      </li>
-    </ul>
-
-    <div class="container-channel text-center">
-      <button type="button" class="btn btn-side">
-        <a routerLink="/channels">Voir les channels</a>
-      </button>
-      <button type="button" class="btn btn-side">
-        <a routerLink="/channels/add">New Channel</a>
-      </button>
-      <p class="text-center">Utilisateurs</p>
-      <button type="button" class="btn btn-side">
-        <a routerLink="/users">Membres du Slacke</a>
-      </button>
-      <button type="button" class="btn btn-side">
-        <a routerLink="/users/add">Nouvel Utilisateur</a>
-      </button>
-    </div>
-  </div>
+  
 
   <!-- Main Area -->
   <div class="display-area p-3">
