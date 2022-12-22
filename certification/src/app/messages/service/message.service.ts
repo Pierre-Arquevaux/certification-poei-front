@@ -42,7 +42,7 @@ export class MessageService {
 
   // public createMessage(url: string, user: any) {
 
-  //   const headers = new HttpHeaders({
+   //  const headers = new HttpHeaders({
   //     'Content-Type' : 'application/json'
   //   });
 

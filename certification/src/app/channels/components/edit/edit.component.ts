@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ChannelService } from '../../service/channel.service';
 
 
-const url = "http://localhost:8080/channel" 
+const url = "http://localhost:8080/channel"
 
 
 @Component({
@@ -16,7 +16,7 @@ export class EditComponent implements OnInit {
 
   public id?: number;
   public form: FormGroup;
-  
+
   constructor(
     private channelService: ChannelService,
     private route: ActivatedRoute,
@@ -27,7 +27,7 @@ export class EditComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void 
+  ngOnInit(): void
   {
     // Get ID from URL
     this.id = Number(this.route.snapshot.paramMap.get('id'));
