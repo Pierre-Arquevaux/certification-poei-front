@@ -1,16 +1,30 @@
-<h2> Create a new channel</h2>
+<div class="container-channel">
+  <h2>Créé un nouveau channel</h2>
 
-<!-- title -->
+  <div class="addcomponent">
+    <!-- title -->
+    <div class="form-group">
+      <label for="name">Channel</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Votre channel"
+        [formControl]="form.controls.name"
+      />
+    </div>
 
-<div class="form-group">
-  <label for="name">Donner un nom à votre channel</label>
-  <input
-      type="text"
-      class="form-control"
-      id="name"
-      [formControl]="form.controls.name">
+    <!-- submit -->
+    <div class="button text-center">
+      <button type="submit" class="btn btn-primary" (click)="submitChannel()">
+        Let's go
+      </button>
+    </div>
+  </div>
+
+  <div class="button text-center">
+    <button type="submit" class="btn btn-accueil">
+      <a routerLink="/">Retour à l'accueil</a>
+    </button>
+  </div>
 </div>
-
-
-<!-- submit -->
-<button type="submit" (click)="submitChannel()">Create new channel</button>

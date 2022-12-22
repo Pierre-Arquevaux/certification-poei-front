@@ -1,27 +1,30 @@
-<h2>{{pageTitle}}</h2>
+<div class="container">
+  <a routerLink="/messages/add">Créé un Message</a>
+
+<div class="button text-center">
+  <button class="btn btn-lg btn-primary"><a routerLink="/messages/add">Nouveau message</a></button>
+</div>
+
+<div class="row">
+  <div *ngFor="let message of messages" class="col-lg-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{message.user.username}}</h5>
+        <p class="card-text">{{message.content}}</p>
+        <p class="card-text">Channel : {{message.channel.name}}</p>
+        <a routerLink="/messages/{{message.id}}/delete">Supprimer</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="button text-center">
+  <button type="submit" class="btn btn-accueil">
+    <a routerLink="/">Retour à l'accueil</a>
+  </button>
+</div>
+
+</div>
 
 
-
-<a routerLink="/messages/add">Create New message</a>
-
-
-
-<!-- Afficher un message si aucun message dans la liste -->
-
-<ul *ngIf="messages.length; else noMessageMessage">
-
-  <li *ngFor="let message of messages; let i= index">
-
-    <a [routerLink]="['/messages', message.id]">{{message.content}}</a>
-
-   </li>
-
-</ul>
-
-
-
-<ng-template #noMessageMessage>
-
-  <div>Aucun livre en BDD</div>
-
-</ng-template>
