@@ -40,3 +40,14 @@ input {
   color: white;
   text-decoration: none;
 }
+
+@media screen and (max-width: 1200px) {
+  .container {
+    position: absolute;
+    top : 30%;
+    left : 60% ;
+    transform: translate(-50%, -50%);
+  }
+
+}
+
