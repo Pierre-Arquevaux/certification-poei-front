@@ -1,3 +1,7 @@
+.container{
+  margin-top: 5rem;
+}
+
 .row{
   width: 80%;
   margin: auto;
@@ -9,12 +13,16 @@
 }
 
 button{
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 button > a{
   color: white;
   text-decoration: none;
+}
+
+.btn-warning{
+  margin: 1rem;
 }
 
 .btn-accueil{
