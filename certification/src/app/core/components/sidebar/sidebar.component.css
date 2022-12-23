@@ -5,6 +5,20 @@ main{
   z-index: 1;
 }
 
+#check{
+  display: none;
+}
+
+label #btn {
+  display: none;
+  position: absolute;
+  color : black;
+  right : 3%;
+  top : 11%
+}
+
+
+
 .side-nav-content {
   color: white;
   font-size: 1.5rem;
@@ -16,6 +30,7 @@ main{
   height: calc(100vh - 4rem);
   box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
   background-color: #93b6d9;
+  z-index: 4;
 }
 
 
@@ -53,6 +68,16 @@ i{
   background-color: #fff8e9;
   width : 200px;
   margin: 0.7rem;
+
+}
+
+.btn-side>a {
+  text-decoration: none;
+}
+
+.nav-a{
+  text-decoration: none;
+  color: white;
 }
 
 /* message container */
@@ -61,17 +86,23 @@ i{
   overflow-y: scroll;
 }
 
-@media screen and (max-width: 950px) {
-  .side-nav-content{
-    display: none;
+p{
+  text-decoration: underline;
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 450px) {
+  .side-nav-content {
+    left: -300px;
   }
 
-  .display-area{
-    left: 0;
-    width : calc(100%);
+  label #btn {
+    display: block;
+    cursor: pointer;
+    z-index: 4;
   }
 
-  form{
-    display: none !important;
+  #check:checked ~ .side-nav-content {
+    left: 0rem;
   }
 }

@@ -32,6 +32,11 @@ export class DeleteComponent {
   proceedToDelete()
   {
     this.messageService.deleteMessage(url, this.id);
-    this.router.navigate(['/messages']);
+    this.redirectTo('/messages/')
   }
+
+  public redirectTo(url:string) {
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate([url]))
+  }
+
 }

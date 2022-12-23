@@ -1,5 +1,8 @@
-.container-channel{
-  margin-top: 3.5rem;
+.container{
+  position: absolute;
+  top : 50%;
+  left : 50%;
+  transform: translate(-50%,-50%);
 }
 
 h2{
@@ -19,6 +22,7 @@ label{
   margin-top: 2rem;
   font-size: 1.8rem;
 }
+
 input {
   margin-top: 1rem;
 }
@@ -36,3 +40,14 @@ input {
   color: white;
   text-decoration: none;
 }
+
+@media screen and (max-width: 1200px) {
+  .container {
+    position: absolute;
+    top : 30%;
+    left : 60% ;
+    transform: translate(-50%, -50%);
+  }
+
+}
+
